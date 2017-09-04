@@ -9,11 +9,11 @@ import scrapy
 from jd.items import ParameterItem
 from jd.spiders.exception import ParseNotSupportedError
 
-logger = logging.getLogger('jindong')
+logger = logging.getLogger('jd')
 
 
 class JDSpider(scrapy.Spider):
-    name = "jindong"
+    name = "jd"
     rotete_user_agent = True
 
     def __init__(self):

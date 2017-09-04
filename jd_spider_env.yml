@@ -1,0 +1,24 @@
+graphite:
+  image: samrayleung/graphite-statsd:latest
+  ports:
+    - "8081:80"
+    - "80:80"
+    - "2003-2004:2003-2004"
+    - "2023-2024:2023-2024"
+    - "8125:8125/udp"
+    - "8126:8126"
+  restart: always
+redis:
+  image: redis:4
+  volumes:
+    - /Users/pro/database/redis/jingdong/data:/data
+    - /Users/pro/database/redis/jingdong/redis.conf:/usr/local/etc/redis/redis.conf
+  ports:
+      - "6379:6379"
+mongodb:
+  image: mongo:3.5
+  volumes:
+    - /Users/pro/database/mongo/jingdong/data:/data/db
+    - /Users/pro/database/mongo/jingdong/conf:/data/configdb
+  ports:
+      - "27017:27017"
